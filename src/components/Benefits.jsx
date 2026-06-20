@@ -100,12 +100,12 @@ export default function Benefits() {
             Découvrez comment le magnétisme peut devenir votre avantage concurrentiel.
           </p>
           <button
-            onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.querySelector('#magnetiseurs')?.scrollIntoView({ behavior: 'smooth' })}
             className="btn-gold"
-            aria-label="Prendre rendez-vous pour une séance de magnétisme"
+            aria-label="Voir les magnétiseurs de l'association"
           >
             <Zap size={18} />
-            Prendre rendez-vous
+            Choisir un magnétiseur
           </button>
         </div>
       </div>

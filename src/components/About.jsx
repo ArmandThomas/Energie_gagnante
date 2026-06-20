@@ -1,8 +1,8 @@
 import { CheckCircle, Award, Users, Star } from 'lucide-react'
 
 const stats = [
-  { icon: Users,  value: '50+',   label: 'Sportifs accompagnés' },
-  { icon: Award,  value: '10+',   label: 'Années d\'expérience' },
+  { icon: Users,  value: '3',     label: 'Magnétiseurs partenaires' },
+  { icon: Award,  value: '50+',   label: 'Sportifs accompagnés' },
   { icon: Star,   value: '4.9/5', label: 'Satisfaction client' },
 ]
 
@@ -24,18 +24,44 @@ export default function About() {
 
         {/* Section header */}
         <div className="text-center mb-16">
-          <p className="text-gold-500 font-medium text-sm uppercase tracking-widest mb-3">À propos</p>
+          <p className="text-gold-500 font-medium text-sm uppercase tracking-widest mb-3">L'association</p>
           <h2
             id="apropos-title"
             className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5"
           >
-            Le magnétisme au service de{' '}
+            Un collectif au service de{' '}
             <span className="gold-text">la performance</span>
           </h2>
-          <p className="text-dark-300 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-            Chaque athlète possède une énergie vitale unique. Quand elle est bloquée,
-            la performance s'effondre. Le magnétisme libère ces blocages et restaure
-            l'équilibre nécessaire à l'excellence.
+          <p className="text-dark-300 max-w-2xl mx-auto text-lg sm:text-xl leading-relaxed">
+            L'Équilibre Gagnant réunit trois magnétiseurs qui partagent une même
+            conviction : chaque athlète possède une énergie vitale unique. Quand elle
+            est bloquée, la performance s'effondre. Notre démarche libère ces blocages
+            et restaure l'équilibre nécessaire à l'excellence.
+          </p>
+        </div>
+
+        {/* Manifeste de l'association */}
+        <div className="max-w-3xl mx-auto mb-16 space-y-5 text-dark-300 text-lg sm:text-xl leading-relaxed">
+          <p>
+            Magnétiseurs, nous nous sommes associés pour mettre au point un protocole
+            de séance destiné aux sportifs. Nous ne remplaçons pas votre entraîneur,
+            votre médecin, votre kinésithérapeute, votre coach mental, devenus tous
+            indispensables dans le sport de haut niveau. Nous arrivons en complément
+            pour harmoniser vos énergies dans les plans émotionnel, mental, spirituel
+            et leur impact sur votre physique.
+          </p>
+          <p>
+            Nous ne vous promettons pas des victoires, mais nous vous accompagnons pour
+            trouver votre moi réel, afin que vous soyez en pleine possession de vos
+            moyens dans vos pratiques. Si vous êtes sportif de haut niveau ou coach,
+            soyez les premiers à essayer cette nouvelle approche dans votre préparation.
+          </p>
+          <p>
+            Le stress, la peur de l'échec, le regard des autres induisent des blocages
+            ou des fuites d'énergies. Le magnétisme des mains, comme nous le pratiquons,
+            permet de rétablir la circulation et les équilibres d'énergies qui vous
+            alimentent et vous font vivre. Vous allez pouvoir vous libérer des derniers
+            freins pour réaliser vos objectifs.
           </p>
         </div>
 
@@ -53,24 +79,20 @@ export default function About() {
                   className="w-20 h-20 rounded-2xl gold-gradient flex items-center justify-center flex-shrink-0 shadow-lg shadow-gold-500/20"
                   aria-hidden="true"
                 >
-                  <span className="text-2xl font-serif font-bold text-dark-900">P</span>
+                  <span className="text-2xl font-serif font-bold text-dark-900">EG</span>
                 </div>
                 <div>
                   <h3 className="font-serif text-xl font-bold text-white mb-1">
-                    [Prénom Nom]
+                    L'Équilibre Gagnant
                   </h3>
-                  <p className="text-gold-500 text-sm font-medium">Magnétiseur thérapeute</p>
-                  <p className="text-dark-400 text-sm mt-1">Spécialiste sportifs de haut niveau</p>
+                  <p className="text-gold-500 text-sm font-medium">Association de magnétiseurs</p>
+                  <p className="text-dark-400 text-sm mt-1">Spécialistes sportifs de haut niveau</p>
                 </div>
               </div>
 
               <p className="text-dark-300 leading-relaxed mb-6">
-                Passionné par le sport et les médecines énergétiques depuis plus de{' '}
-                <strong className="text-white">10 ans</strong>, j'ai développé une méthode
-                unique alliant magnétisme traditionnel et compréhension des exigences de la
-                compétition de haut niveau. Mon approche vise à libérer les blocages
-                énergétiques qui freinent les performances, qu'ils soient physiques,
-                mentaux ou émotionnels.
+                Trois praticiens réunis autour d'un protocole commun de magnétisme,
+                pensé comme un complément à votre préparation de sportif de haut niveau.
               </p>
 
               <ul className="space-y-3" role="list" aria-label="Points clés de la méthode">
@@ -139,7 +161,7 @@ export default function About() {
                 sa performance parle d'elle-même."
               </p>
               <footer className="mt-3 text-gold-500 text-sm font-medium">
-                — [Prénom Nom]
+                — L'Équilibre Gagnant
               </footer>
             </blockquote>
           </div>

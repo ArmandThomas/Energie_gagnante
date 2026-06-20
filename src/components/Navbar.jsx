@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import logo from '../assets/logo.svg'
 
 const navLinks = [
-  { href: '#apropos',  label: 'À propos' },
-  { href: '#benefices', label: 'Bénéfices' },
-  { href: '#tarifs',   label: 'Tarifs' },
-  { href: '#avis',     label: 'Avis' },
-  { href: '#contact',  label: 'Contact' },
+  { href: '#apropos',      label: 'L\'association' },
+  { href: '#benefices',    label: 'Bénéfices' },
+  { href: '#magnetiseurs', label: 'Magnétiseurs' },
+  { href: '#tarif',        label: 'Tarif' },
+  { href: '#avis',         label: 'Avis' },
+  { href: '#contact',      label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -41,14 +43,16 @@ export default function Navbar() {
         <a
           href="#hero"
           className="flex items-center gap-2 group"
-          aria-label="L'Énergie Gagnante — Retour en haut"
+          aria-label="L'Équilibre Gagnant — Retour en haut"
           onClick={(e) => { e.preventDefault(); handleLink('#hero') }}
         >
-          <div className="w-8 h-8 rounded-full gold-gradient flex items-center justify-center shadow-md shadow-gold-500/30">
-            <Zap size={16} className="text-dark-900" />
-          </div>
+          <img
+            src={logo}
+            alt="L'Équilibre Gagnant"
+            className="w-9 h-9 rounded-full bg-white p-0.5 shadow-md shadow-gold-500/30"
+          />
           <span className="font-serif font-semibold text-base sm:text-lg gold-text hidden sm:block">
-            L'Énergie Gagnante
+            L'Équilibre Gagnant
           </span>
         </a>
 
@@ -68,9 +72,9 @@ export default function Navbar() {
 
         {/* CTA Desktop */}
         <a
-          href="#contact"
+          href="#magnetiseurs"
           className="hidden md:block btn-gold text-sm px-5 py-2.5"
-          onClick={(e) => { e.preventDefault(); handleLink('#contact') }}
+          onClick={(e) => { e.preventDefault(); handleLink('#magnetiseurs') }}
         >
           Prendre rendez-vous
         </a>
@@ -99,9 +103,9 @@ export default function Navbar() {
             </button>
           ))}
           <a
-            href="#contact"
+            href="#magnetiseurs"
             className="btn-gold w-full text-sm mt-2"
-            onClick={(e) => { e.preventDefault(); handleLink('#contact') }}
+            onClick={(e) => { e.preventDefault(); handleLink('#magnetiseurs') }}
           >
             Prendre rendez-vous
           </a>

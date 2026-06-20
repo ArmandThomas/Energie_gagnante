@@ -1,13 +1,21 @@
 import './index.css'
-import Navbar      from './components/Navbar'
-import Hero        from './components/Hero'
-import About       from './components/About'
-import Benefits    from './components/Benefits'
-import Pricing     from './components/Pricing'
-import Reviews     from './components/Reviews'
-import ExternalCTA from './components/ExternalCTA'
-import ContactForm from './components/ContactForm'
-import Footer      from './components/Footer'
+import Navbar       from './components/Navbar'
+import Hero         from './components/Hero'
+import About        from './components/About'
+import Benefits     from './components/Benefits'
+import Magnetiseurs from './components/Magnetiseurs'
+import Tarif        from './components/Tarif'
+import Reviews      from './components/Reviews'
+import ContactForm  from './components/ContactForm'
+import Footer       from './components/Footer'
+
+function Divider() {
+  return (
+    <div className="max-w-6xl mx-auto px-4">
+      <div className="border-t section-divider" aria-hidden="true" />
+    </div>
+  )
+}
 
 function App() {
   return (
@@ -16,42 +24,17 @@ function App() {
 
       <main id="main-content">
         <Hero />
-
-        {/* Divider */}
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="border-t section-divider" aria-hidden="true" />
-        </div>
-
+        <Divider />
         <About />
-
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="border-t section-divider" aria-hidden="true" />
-        </div>
-
+        <Divider />
         <Benefits />
-
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="border-t section-divider" aria-hidden="true" />
-        </div>
-
-        <Pricing />
-
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="border-t section-divider" aria-hidden="true" />
-        </div>
-
+        <Divider />
+        <Magnetiseurs />
+        <Divider />
+        <Tarif />
+        <Divider />
         <Reviews />
-
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="border-t section-divider" aria-hidden="true" />
-        </div>
-
-        <ExternalCTA />
-
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="border-t section-divider" aria-hidden="true" />
-        </div>
-
+        <Divider />
         <ContactForm />
       </main>
 

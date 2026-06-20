@@ -1,11 +1,13 @@
-import { Zap, ExternalLink, ArrowUp } from 'lucide-react'
+import { Zap, ArrowUp } from 'lucide-react'
+import logo from '../assets/logo.svg'
 
 const navLinks = [
-  { href: '#apropos',   label: 'À propos' },
-  { href: '#benefices', label: 'Bénéfices' },
-  { href: '#tarifs',    label: 'Tarifs' },
-  { href: '#avis',      label: 'Témoignages' },
-  { href: '#contact',   label: 'Contact' },
+  { href: '#apropos',      label: 'L\'association' },
+  { href: '#benefices',    label: 'Bénéfices' },
+  { href: '#magnetiseurs', label: 'Magnétiseurs' },
+  { href: '#tarif',        label: 'Tarif' },
+  { href: '#avis',         label: 'Témoignages' },
+  { href: '#contact',      label: 'Contact' },
 ]
 
 export default function Footer() {
@@ -26,31 +28,17 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-full gold-gradient flex items-center justify-center shadow-md shadow-gold-500/30">
-                <Zap size={18} className="text-dark-900" aria-hidden="true" />
-              </div>
-              <span className="font-serif font-bold text-lg gold-text">L'Énergie Gagnante</span>
+              <img
+                src={logo}
+                alt="L'Équilibre Gagnant"
+                className="w-10 h-10 rounded-full bg-white p-0.5 shadow-md shadow-gold-500/30"
+              />
+              <span className="font-serif font-bold text-lg gold-text">L'Équilibre Gagnant</span>
             </div>
             <p className="text-dark-400 text-sm leading-relaxed">
-              Magnétisme thérapeutique spécialisé pour les sportifs de haut niveau.
+              L'association de magnétiseurs dédiée aux sportifs de haut niveau.
               Libérez votre potentiel énergétique, dépassez vos limites.
             </p>
-
-            {/* External link to qi-equilibre.fr */}
-            <a
-              href="https://qi-equilibre.fr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-4 text-gold-500 hover:text-gold-400 text-sm font-medium transition-colors group"
-              aria-label="Visiter le site Qi Équilibre (ouvre dans un nouvel onglet)"
-            >
-              <span>Visiter Qi-Équilibre.fr</span>
-              <ExternalLink
-                size={14}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                aria-hidden="true"
-              />
-            </a>
           </div>
 
           {/* Navigation */}
@@ -79,30 +67,20 @@ export default function Footer() {
               Rejoignez les sportifs qui ont fait confiance au magnétisme pour transformer leur performance.
             </p>
             <button
-              onClick={() => scrollTo('#contact')}
+              onClick={() => scrollTo('#magnetiseurs')}
               className="btn-gold text-sm px-5 py-2.5 w-full"
-              aria-label="Réserver votre séance de magnétisme"
+              aria-label="Choisir un magnétiseur"
             >
               <Zap size={14} />
-              Réserver une séance
+              Choisir un magnétiseur
             </button>
-            <a
-              href="https://qi-equilibre.fr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline-gold text-sm px-5 py-2.5 w-full mt-3 flex"
-              aria-label="Visiter Qi-Équilibre.fr (ouvre dans un nouvel onglet)"
-            >
-              <ExternalLink size={14} />
-              Qi-Équilibre.fr
-            </a>
           </div>
         </div>
 
         {/* Divider */}
         <div className="border-t border-dark-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-dark-500 text-xs">
           <p>
-            © {new Date().getFullYear()} L'Énergie Gagnante — Magnétisme thérapeutique pour sportifs
+            © {new Date().getFullYear()} L'Équilibre Gagnant — Magnétisme thérapeutique pour sportifs
           </p>
           <p>
             Mentions légales · Politique de confidentialité

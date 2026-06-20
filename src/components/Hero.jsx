@@ -44,26 +44,23 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-400 text-sm font-medium mb-8 animate-fade-in-up">
-          <Zap size={14} />
-          <span>Magnétisme & Performance Athlétique</span>
-        </div>
-
         {/* Main heading */}
         <h1
           id="hero-title"
-          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in-up delay-100"
+          className="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-normal px-6 sm:px-10 pb-4 mb-4 animate-fade-in-up delay-100"
         >
-          Libérez votre{' '}
-          <span className="gold-text">énergie</span>
-          <br />
-          <span className="italic text-dark-200">gagnante</span>
+          The winning{' '}
+          <span className="gold-text pr-[15px]">balance</span>
         </h1>
+
+        {/* French subtitle */}
+        <p className="font-sans uppercase tracking-[0.25em] text-gold-500/90 text-base sm:text-lg md:text-xl font-medium mb-6 animate-fade-in-up delay-100">
+          Libérez votre énergie gagnante
+        </p>
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl text-dark-300 max-w-2xl mx-auto leading-relaxed mb-10 animate-fade-in-up delay-200">
-          Accompagnement en magnétisme thérapeutique spécialement conçu pour les{' '}
+          L'association de magnétiseurs dédiée aux{' '}
           <strong className="text-gold-400 font-medium">sportifs de haut niveau</strong>.
           Rééquilibrez votre énergie, dépassez vos limites, accédez à votre plein potentiel.
         </p>
@@ -71,12 +68,12 @@ export default function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
           <button
-            onClick={() => scrollTo('#contact')}
+            onClick={() => scrollTo('#magnetiseurs')}
             className="btn-gold text-base w-full sm:w-auto"
-            aria-label="Réserver une séance de magnétisme"
+            aria-label="Choisir un magnétiseur"
           >
             <Zap size={18} />
-            Réserver une séance
+            Choisir un magnétiseur
           </button>
           <button
             onClick={() => scrollTo('#apropos')}
