@@ -1,5 +1,5 @@
 import { Zap, ArrowUp } from 'lucide-react'
-import logo from '../assets/logo.svg'
+import logo from '../assets/Logo.png'
 
 const navLinks = [
   { href: '#apropos',      label: 'L\'association' },

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import logo from '../assets/logo.svg'
 
 const navLinks = [
   { href: '#apropos',      label: 'L\'association' },
@@ -46,12 +45,7 @@ export default function Navbar() {
           aria-label="L'Équilibre Gagnant — Retour en haut"
           onClick={(e) => { e.preventDefault(); handleLink('#hero') }}
         >
-          <img
-            src={logo}
-            alt="L'Équilibre Gagnant"
-            className="w-9 h-9 rounded-full bg-white p-0.5 shadow-md shadow-gold-500/30"
-          />
-          <span className="font-serif font-semibold text-base sm:text-lg gold-text hidden sm:block">
+          <span className="font-serif font-semibold text-base sm:text-lg gold-text">
             L'Équilibre Gagnant
           </span>
         </a>
