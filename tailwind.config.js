@@ -33,8 +33,9 @@ export default {
         },
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans:  ['Inter', 'system-ui', 'sans-serif'],
+        serif:  ['"Playfair Display"', 'Georgia', 'serif'],
+        sans:   ['Inter', 'system-ui', 'sans-serif'],
+        script: ['Yellowtail', 'cursive'],
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.7s ease-out forwards',

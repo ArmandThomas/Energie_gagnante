@@ -1,28 +1,30 @@
 import { useState } from 'react'
-import { Send, CheckCircle, AlertCircle, Loader2, MapPin, Video, Phone } from 'lucide-react'
+import { Send, CheckCircle, AlertCircle, Loader2, MapPin, Video } from 'lucide-react'
+import { magnetiseurs } from '../data/magnetiseurs'
 
 const initialForm = {
-  prenom:    '',
-  nom:       '',
-  email:     '',
-  telephone: '',
-  sport:     '',
-  objectif:  '',
-  message:   '',
-  formule:   '',
+  prenom:      '',
+  nom:         '',
+  email:       '',
+  telephone:   '',
+  sport:       '',
+  objectif:    '',
+  message:     '',
+  magnetiseur: '',
+  botcheck:    false,
 }
 
-const formules = [
-  'Séance découverte',
-  'Pack Performance (3 séances)',
-  'Suivi Élite (mensuel)',
-  'Autre / Je souhaite des informations',
+const magnetiseurOptions = [
+  ...magnetiseurs.map((m) => `${m.name} — ${m.city}`),
+  'Je ne sais pas encore / renseignements',
 ]
+
+// Clé publique Web3Forms (sans risque côté front).
+const WEB3FORMS_ACCESS_KEY = '39badbf8-d45f-4adb-b5b4-85d1ba690a2c'
 
 const modalities = [
   { icon: MapPin, title: 'Présentiel',  desc: 'Séance en cabinet' },
   { icon: Video,  title: 'Distanciel', desc: 'Séance en visio' },
-  { icon: Phone,  title: 'Par téléphone', desc: 'Échange préalable gratuit' },
 ]
 
 export default function ContactForm() {
@@ -36,13 +38,13 @@ export default function ContactForm() {
     if (!form.nom.trim())     e.nom     = 'Nom requis'
     if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email))
       e.email = 'Email valide requis'
-    if (!form.formule)        e.formule = 'Veuillez choisir une formule'
+    if (!form.magnetiseur)    e.magnetiseur = 'Veuillez choisir un magnétiseur'
     return e
   }
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setForm((prev) => ({ ...prev, [name]: value }))
+    const { name, value, type, checked } = e.target
+    setForm((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }))
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }))
   }
 
@@ -55,9 +57,29 @@ export default function ContactForm() {
     }
 
     setStatus('loading')
-    // Simulate network delay (replace with real API call)
-    await new Promise((r) => setTimeout(r, 1500))
-    setStatus('success')
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          botcheck: form.botcheck,
+          subject: `Nouveau contact — ${form.prenom} ${form.nom}`,
+          from_name: "L'Équilibre Gagnant",
+          name: `${form.prenom} ${form.nom}`,
+          email: form.email,
+          telephone: form.telephone,
+          sport: form.sport,
+          magnetiseur: form.magnetiseur,
+          objectif: form.objectif,
+          message: form.message,
+        }),
+      })
+      const data = await response.json()
+      setStatus(data.success ? 'success' : 'error')
+    } catch {
+      setStatus('error')
+    }
   }
 
   if (status === 'success') {
@@ -70,7 +92,7 @@ export default function ContactForm() {
             </div>
             <h2 className="font-serif text-2xl font-bold text-white mb-3">Message envoyé !</h2>
             <p className="text-dark-300 leading-relaxed mb-6">
-              Merci pour votre message. Je vous recontacterai dans les{' '}
+              Merci pour votre message. Nous vous recontacterons dans les{' '}
               <strong className="text-gold-400">48h</strong> pour convenir d'un rendez-vous.
             </p>
             <button
@@ -103,8 +125,9 @@ export default function ContactForm() {
             <span className="gold-text">transformation</span>
           </h2>
           <p className="text-dark-300 max-w-xl mx-auto text-base sm:text-lg">
-            Remplissez le formulaire ci-dessous — je vous répondrai sous 48h pour
-            planifier votre première séance.
+            Ce formulaire est un premier contact : laissez-nous vos coordonnées et l'un
+            de nos magnétiseurs vous recontactera sous 48h pour échanger et planifier
+            une première séance.
           </p>
         </div>
 
@@ -129,9 +152,9 @@ export default function ContactForm() {
 
             <div className="card-dark rounded-xl p-5 mt-6">
               <p className="text-dark-300 text-sm leading-relaxed">
-                <strong className="text-gold-400">Premier contact</strong> : un échange
-                téléphonique gratuit de 15 minutes est disponible pour répondre à toutes
-                vos questions avant de vous engager.
+                <strong className="text-gold-400">Premier contact</strong> : après l'envoi
+                du formulaire, l'un de nos magnétiseurs vous rappelle pour répondre à toutes
+                vos questions et planifier votre première séance.
               </p>
             </div>
           </aside>
@@ -144,6 +167,19 @@ export default function ContactForm() {
               noValidate
               aria-label="Formulaire de contact"
             >
+              {/* Honeypot anti-spam (caché — ne pas remplir) */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                checked={form.botcheck}
+                onChange={handleChange}
+                className="hidden"
+                style={{ display: 'none' }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
+
               {/* Name row */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <Field
@@ -198,36 +234,36 @@ export default function ContactForm() {
                 placeholder="Ex: Football, Tennis, Natation..."
               />
 
-              {/* Formule */}
+              {/* Magnétiseur */}
               <div>
                 <label
-                  htmlFor="formule"
+                  htmlFor="magnetiseur"
                   className="block text-sm font-medium text-dark-200 mb-1.5"
                 >
-                  Formule souhaitée *
+                  Magnétiseur souhaité *
                 </label>
                 <select
-                  id="formule"
-                  name="formule"
-                  value={form.formule}
+                  id="magnetiseur"
+                  name="magnetiseur"
+                  value={form.magnetiseur}
                   onChange={handleChange}
                   required
-                  aria-invalid={!!errors.formule}
-                  aria-describedby={errors.formule ? 'formule-error' : undefined}
+                  aria-invalid={!!errors.magnetiseur}
+                  aria-describedby={errors.magnetiseur ? 'magnetiseur-error' : undefined}
                   className={`w-full bg-dark-800 border rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 transition-colors ${
-                    errors.formule
+                    errors.magnetiseur
                       ? 'border-red-500 focus:ring-red-500'
                       : 'border-dark-600 focus:border-gold-500 focus:ring-gold-500'
                   }`}
                 >
-                  <option value="" disabled>Choisissez une formule…</option>
-                  {formules.map((f) => (
-                    <option key={f} value={f}>{f}</option>
+                  <option value="" disabled>Choisissez un magnétiseur…</option>
+                  {magnetiseurOptions.map((m) => (
+                    <option key={m} value={m}>{m}</option>
                   ))}
                 </select>
-                {errors.formule && (
-                  <p id="formule-error" role="alert" className="text-red-400 text-xs mt-1 flex items-center gap-1">
-                    <AlertCircle size={12} aria-hidden="true" /> {errors.formule}
+                {errors.magnetiseur && (
+                  <p id="magnetiseur-error" role="alert" className="text-red-400 text-xs mt-1 flex items-center gap-1">
+                    <AlertCircle size={12} aria-hidden="true" /> {errors.magnetiseur}
                   </p>
                 )}
               </div>
@@ -257,6 +293,14 @@ export default function ContactForm() {
                   className="w-full bg-dark-800 border border-dark-600 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors resize-none"
                 />
               </div>
+
+              {/* Error */}
+              {status === 'error' && (
+                <p role="alert" className="text-red-400 text-sm flex items-center gap-2">
+                  <AlertCircle size={16} aria-hidden="true" />
+                  Une erreur est survenue. Merci de réessayer ou de nous contacter directement.
+                </p>
+              )}
 
               {/* Submit */}
               <button
