@@ -45,7 +45,7 @@ export default function Navbar() {
           aria-label="L'Équilibre Gagnant — Retour en haut"
           onClick={(e) => { e.preventDefault(); handleLink('#hero') }}
         >
-          <span className="font-serif font-semibold text-base sm:text-lg gold-text">
+          <span className="hidden sm:block font-serif font-semibold text-base sm:text-lg gold-text">
             L'Équilibre Gagnant
           </span>
         </a>
