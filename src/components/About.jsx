@@ -3,7 +3,7 @@ import { CheckCircle, Award, Users, Star } from 'lucide-react'
 const stats = [
   { icon: Users,  value: '3',     label: 'Magnétiseurs partenaires' },
   { icon: Award,  value: '50+',   label: 'Sportifs accompagnés' },
-  { icon: Star,   value: '4.9/5', label: 'Satisfaction client' },
+  { icon: Star,   value: '4.8/5', label: 'Satisfaction client' },
 ]
 
 const values = [

@@ -89,7 +89,7 @@ export default function Reviews() {
                 <Star key={i} size={16} className="text-gold-500 fill-gold-500" />
               ))}
             </div>
-            <span className="text-white font-semibold">4.9</span>
+            <span className="text-white font-semibold">4.8</span>
             <span className="text-dark-400 text-sm">/ 5 — 50+ avis</span>
           </div>
         </div>
