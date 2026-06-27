@@ -3,7 +3,6 @@ import { CheckCircle, MessageCircle } from 'lucide-react'
 const inclus = [
   'Bilan énergétique personnalisé',
   'Séance de magnétisme des mains',
-  'Programme adapté à votre discipline et vos objectifs',
   'Séance en présentiel ou à distance',
 ]
 

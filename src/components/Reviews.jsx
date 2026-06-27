@@ -82,16 +82,6 @@ export default function Reviews() {
             Des sportifs de haut niveau qui ont fait confiance au magnétisme et transformé leur performance.
           </p>
 
-          {/* Overall rating */}
-          <div className="inline-flex items-center gap-3 mt-6 px-5 py-3 card-dark rounded-full">
-            <div className="flex gap-0.5" aria-hidden="true">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={16} className="text-gold-500 fill-gold-500" />
-              ))}
-            </div>
-            <span className="text-white font-semibold">4.8</span>
-            <span className="text-dark-400 text-sm">/ 5 — 50+ avis</span>
-          </div>
         </div>
 
         {/* Grid */}

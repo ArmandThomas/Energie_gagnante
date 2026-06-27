@@ -24,7 +24,7 @@ const WEB3FORMS_ACCESS_KEY = '39badbf8-d45f-4adb-b5b4-85d1ba690a2c'
 
 const modalities = [
   { icon: MapPin, title: 'Présentiel',  desc: 'Séance en cabinet' },
-  { icon: Video,  title: 'Distanciel', desc: 'Séance en visio' },
+  { icon: Video,  title: 'Distanciel', desc: '' },
 ]
 
 export default function ContactForm() {

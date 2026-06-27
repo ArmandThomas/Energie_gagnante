@@ -3,11 +3,9 @@ import { CheckCircle, Award, Users, Star } from 'lucide-react'
 const stats = [
   { icon: Users,  value: '3',     label: 'Magnétiseurs partenaires' },
   { icon: Award,  value: '50+',   label: 'Sportifs accompagnés' },
-  { icon: Star,   value: '4.8/5', label: 'Satisfaction client' },
 ]
 
 const values = [
-  'Approche 100% personnalisée selon votre discipline',
   'Séances en présentiel ou à distance',
   'Résultats mesurables dès la 1ère séance',
   'Complémentaire à votre suivi médical et sportif',
