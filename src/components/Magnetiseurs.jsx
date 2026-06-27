@@ -60,7 +60,7 @@ function Avatar({ photo, initials, name }) {
 }
 
 function MagnetiseurCard({ magnetiseur }) {
-  const { name, initials, photo, city, region, specialty, bio, siteUrl, address } = magnetiseur
+  const { name, initials, photo, city, region, specialty, siteUrl, address } = magnetiseur
 
   return (
     <article
@@ -80,7 +80,6 @@ function MagnetiseurCard({ magnetiseur }) {
       </div>
 
       {/* Bio */}
-      <p className="text-dark-300 text-sm leading-relaxed flex-1 mb-4">{bio}</p>
 
       {/* Address */}
       <p className="text-dark-400 text-xs flex items-start gap-2 mb-6">
