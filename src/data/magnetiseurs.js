@@ -41,7 +41,7 @@ export const magnetiseurs = [
     region: 'Hauts-de-Seine',
     specialty: 'Magnétiseur-Énergéticien',
     bio: '',
-    siteUrl: 'http://www.leonardounkel.com',
+    siteUrl: 'https://www.therapieleonardounkel.com',
     address: 'Colombes, Hauts-de-Seine (92)',
     coords: { lat: 48.9236, lng: 2.2533 },
   },
