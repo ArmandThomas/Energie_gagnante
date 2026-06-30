@@ -22,6 +22,19 @@ const magnetiseurOptions = [
 // Clé publique Web3Forms (sans risque côté front).
 const WEB3FORMS_ACCESS_KEY = '39badbf8-d45f-4adb-b5b4-85d1ba690a2c'
 
+const MAGNETISEUR_EMAILS = {
+  'Philippe Thomas': 'phi.thomas@wanadoo.fr',
+  'Léonardo Unkel':  'unkel.leonardo@gmail.com',
+  'Jean Lubet':      'jeanlubet8@gmail.com',
+}
+
+function getRecipientEmail(magnetiseurOption) {
+  const match = Object.keys(MAGNETISEUR_EMAILS).find((name) =>
+    magnetiseurOption.startsWith(name)
+  )
+  return match ? MAGNETISEUR_EMAILS[match] : null
+}
+
 const modalities = [
   { icon: MapPin, title: 'Présentiel',  desc: 'Séance en cabinet' },
   { icon: Video,  title: 'Distanciel', desc: '' },
@@ -64,6 +77,7 @@ export default function ContactForm() {
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
           botcheck: form.botcheck,
+          ...(getRecipientEmail(form.magnetiseur) && { to: getRecipientEmail(form.magnetiseur) }),
           subject: `Nouveau contact — ${form.prenom} ${form.nom}`,
           from_name: "L'Équilibre Gagnant",
           name: `${form.prenom} ${form.nom}`,
