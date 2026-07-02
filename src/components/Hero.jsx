@@ -93,23 +93,6 @@ export default function Hero() {
             Découvrir la méthode
           </button>
         </div>
-
-        {/* Social proof */}
-        <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 text-dark-400 text-sm animate-fade-in-up delay-400">
-          <div className="flex items-center gap-2">
-            <div className="flex -space-x-2">
-              {['C','M','A','T'].map((l, i) => (
-                <div
-                  key={i}
-                  className="w-7 h-7 rounded-full gold-gradient flex items-center justify-center text-xs font-bold text-dark-900 border-2 border-dark-900"
-                >
-                  {l}
-                </div>
-              ))}
-            </div>
-            <span>+50 sportifs accompagnés</span>
-          </div>
-        </div>
       </div>
 
       {/* Scroll indicator */}
