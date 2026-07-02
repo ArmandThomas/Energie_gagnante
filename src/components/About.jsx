@@ -1,8 +1,7 @@
-import { CheckCircle, Award, Users, Star } from 'lucide-react'
+import { CheckCircle, Users, Star } from 'lucide-react'
 
 const stats = [
   { icon: Users,  value: '3',     label: 'Magnétiseurs partenaires' },
-  { icon: Award,  value: '50+',   label: 'Sportifs accompagnés' },
 ]
 
 const values = [
@@ -117,7 +116,7 @@ export default function About() {
           {/* Right — stats + disciplines */}
           <div className="space-y-6">
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 gap-4">
               {stats.map(({ icon: Icon, value, label }) => (
                 <div
                   key={label}
