@@ -6,7 +6,6 @@ const navLinks = [
   { href: '#benefices',    label: 'Bénéfices' },
   { href: '#magnetiseurs', label: 'Magnétiseurs' },
   { href: '#tarif',        label: 'Tarif' },
-  { href: '#avis',         label: 'Témoignages' },
   { href: '#contact',      label: 'Contact' },
 ]
 

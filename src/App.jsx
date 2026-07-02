@@ -5,7 +5,6 @@ import About        from './components/About'
 import Benefits     from './components/Benefits'
 import Magnetiseurs from './components/Magnetiseurs'
 import Tarif        from './components/Tarif'
-import Reviews      from './components/Reviews'
 import ContactForm  from './components/ContactForm'
 import Footer       from './components/Footer'
 
@@ -32,8 +31,6 @@ function App() {
         <Magnetiseurs />
         <Divider />
         <Tarif />
-        <Divider />
-        <Reviews />
         <Divider />
         <ContactForm />
       </main>
