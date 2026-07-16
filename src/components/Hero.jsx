@@ -1,5 +1,5 @@
 import { ArrowDown, Zap } from 'lucide-react'
-import logo from '../assets/Logo.png'
+import logo from '../assets/logo.webp'
 
 export default function Hero() {
   const scrollTo = (id) =>
@@ -49,7 +49,7 @@ export default function Hero() {
         <div className="flex justify-center mb-6 animate-fade-in-up">
           <img
             src={logo}
-            alt="L'Équilibre Gagnant"
+            alt="The Winning Harmony"
             className="w-24 h-24 rounded-full bg-white p-1 shadow-lg shadow-gold-500/30"
           />
         </div>
@@ -59,8 +59,8 @@ export default function Hero() {
           id="hero-title"
           className="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-normal px-6 sm:px-10 pb-4 mb-4 animate-fade-in-up delay-100"
         >
-          The winning{' '}
-          <span className="gold-text pr-[15px]">balance</span>
+          The Winning{' '}
+          <span className="gold-text pr-[15px]">Harmony</span>
         </h1>
 
         {/* French subtitle */}

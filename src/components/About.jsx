@@ -30,7 +30,7 @@ export default function About() {
             <span className="gold-text">la performance</span>
           </h2>
           <p className="text-dark-300 max-w-2xl mx-auto text-lg sm:text-xl leading-relaxed">
-            L'Équilibre Gagnant réunit trois magnétiseurs qui partagent une même
+            The Winning Harmony réunit trois magnétiseurs qui partagent une même
             conviction : chaque athlète possède une énergie vitale unique. Quand elle
             est bloquée, la performance s'effondre. Notre démarche libère ces blocages
             et restaure l'équilibre nécessaire à l'excellence.
@@ -76,11 +76,11 @@ export default function About() {
                   className="w-20 h-20 rounded-2xl gold-gradient flex items-center justify-center flex-shrink-0 shadow-lg shadow-gold-500/20"
                   aria-hidden="true"
                 >
-                  <span className="text-2xl font-serif font-bold text-dark-900">EG</span>
+                  <span className="text-2xl font-serif font-bold text-dark-900">WH</span>
                 </div>
                 <div>
                   <h3 className="font-serif text-xl font-bold text-white mb-1">
-                    L'Équilibre Gagnant
+                    The Winning Harmony
                   </h3>
                   <p className="text-gold-500 text-sm font-medium">Association de magnétiseurs</p>
                   <p className="text-dark-400 text-sm mt-1">Spécialistes sportifs de haut niveau</p>
@@ -158,7 +158,7 @@ export default function About() {
                 sa performance parle d'elle-même."
               </p>
               <footer className="mt-3 text-gold-500 text-sm font-medium">
-                — L'Équilibre Gagnant
+                — The Winning Harmony
               </footer>
             </blockquote>
           </div>

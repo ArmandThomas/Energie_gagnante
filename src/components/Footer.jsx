@@ -1,5 +1,5 @@
 import { Zap, ArrowUp } from 'lucide-react'
-import logo from '../assets/Logo.png'
+import logo from '../assets/logo.webp'
 
 const navLinks = [
   { href: '#apropos',      label: 'L\'association' },
@@ -29,10 +29,10 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <img
                 src={logo}
-                alt="L'Équilibre Gagnant"
+                alt="The Winning Harmony"
                 className="w-10 h-10 rounded-full bg-white p-0.5 shadow-md shadow-gold-500/30"
               />
-              <span className="font-serif font-bold text-lg gold-text">L'Équilibre Gagnant</span>
+              <span className="font-serif font-bold text-lg gold-text">The Winning Harmony</span>
             </div>
             <p className="text-dark-400 text-sm leading-relaxed">
               L'association de magnétiseurs dédiée aux sportifs de haut niveau.
@@ -79,10 +79,16 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-dark-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-dark-500 text-xs">
           <p>
-            © {new Date().getFullYear()} L'Équilibre Gagnant — Magnétisme thérapeutique pour sportifs
+            © {new Date().getFullYear()} The Winning Harmony — Magnétisme thérapeutique pour sportifs
           </p>
-          <p>
-            Mentions légales · Politique de confidentialité
+          <p className="flex items-center gap-2">
+            <a href="/mentions-legales.html" className="hover:text-gold-500 transition-colors">
+              Mentions légales
+            </a>
+            <span aria-hidden="true">·</span>
+            <a href="/politique-confidentialite.html" className="hover:text-gold-500 transition-colors">
+              Politique de confidentialité
+            </a>
           </p>
           {/* Scroll to top */}
           <button

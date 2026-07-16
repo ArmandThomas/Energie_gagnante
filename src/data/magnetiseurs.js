@@ -1,4 +1,4 @@
-// Données des magnétiseurs de l'association L'Équilibre Gagnant.
+// Données des magnétiseurs de l'association The Winning Harmony.
 // PLACEHOLDERS — remplacez les valeurs par les vraies infos.
 // `photo`   : chemin vers la photo du magnétiseur (ex: importée depuis assets).
 //             Laissé vide => les initiales servent de fallback.
