@@ -41,11 +41,11 @@ export default function Navbar() {
         <a
           href="#hero"
           className="flex items-center gap-2 group"
-          aria-label="L'Équilibre Gagnant — Retour en haut"
+          aria-label="The Winning Harmony — Retour en haut"
           onClick={(e) => { e.preventDefault(); handleLink('#hero') }}
         >
           <span className="hidden sm:block font-serif font-semibold text-base sm:text-lg gold-text">
-            L'Équilibre Gagnant
+            The Winning Harmony
           </span>
         </a>
 

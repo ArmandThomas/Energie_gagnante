@@ -79,7 +79,7 @@ export default function ContactForm() {
           botcheck: form.botcheck,
           ...(getRecipientEmail(form.magnetiseur) && { to: getRecipientEmail(form.magnetiseur) }),
           subject: `Nouveau contact — ${form.prenom} ${form.nom}`,
-          from_name: "L'Équilibre Gagnant",
+          from_name: "The Winning Harmony",
           name: `${form.prenom} ${form.nom}`,
           email: form.email,
           telephone: form.telephone,
