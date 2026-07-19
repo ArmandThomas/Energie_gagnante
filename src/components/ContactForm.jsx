@@ -19,7 +19,7 @@ const magnetiseurOptions = [
   'Je ne sais pas encore / renseignements',
 ]
 
-// Clé publique Web3Forms (sans risque côté front).
+// Clé publique Web3Forms par défaut (sans risque côté front).
 const WEB3FORMS_ACCESS_KEY = '39badbf8-d45f-4adb-b5b4-85d1ba690a2c'
 
 const MAGNETISEUR_EMAILS = {
@@ -28,11 +28,24 @@ const MAGNETISEUR_EMAILS = {
   'Jean Lubet':      'jeanlubet8@gmail.com',
 }
 
+// Certains magnétiseurs ont leur propre compte Web3Forms : dans ce cas on
+// utilise leur clé directement, ce qui les rend destinataires natifs.
+const MAGNETISEUR_ACCESS_KEYS = {
+  'Jean Lubet': '2cfe26b9-4eab-4358-a6b8-c3cc83004fa5',
+}
+
 function getRecipientEmail(magnetiseurOption) {
   const match = Object.keys(MAGNETISEUR_EMAILS).find((name) =>
     magnetiseurOption.startsWith(name)
   )
   return match ? MAGNETISEUR_EMAILS[match] : null
+}
+
+function getAccessKey(magnetiseurOption) {
+  const match = Object.keys(MAGNETISEUR_ACCESS_KEYS).find((name) =>
+    magnetiseurOption.startsWith(name)
+  )
+  return match ? MAGNETISEUR_ACCESS_KEYS[match] : WEB3FORMS_ACCESS_KEY
 }
 
 const modalities = [
@@ -75,7 +88,7 @@ export default function ContactForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
+          access_key: getAccessKey(form.magnetiseur),
           botcheck: form.botcheck,
           ...(getRecipientEmail(form.magnetiseur) && { to: getRecipientEmail(form.magnetiseur) }),
           subject: `Nouveau contact — ${form.prenom} ${form.nom}`,
