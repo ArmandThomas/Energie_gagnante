@@ -31,7 +31,8 @@ const MAGNETISEUR_EMAILS = {
 // Certains magnétiseurs ont leur propre compte Web3Forms : dans ce cas on
 // utilise leur clé directement, ce qui les rend destinataires natifs.
 const MAGNETISEUR_ACCESS_KEYS = {
-  'Jean Lubet': '2cfe26b9-4eab-4558-a6b8-c3cc83004fa5',
+  'Jean Lubet':      '2cfe26b9-4eab-4558-a6b8-c3cc83004fa5',
+  'Léonardo Unkel':  '2c6435b9-0fe4-465e-af0a-cc5e0ea55f14',
 }
 
 function getRecipientEmail(magnetiseurOption) {
